@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth" data-theme>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>초개인화 상담 서비스 — 당신만을 위한 맞춤 전략 | HyperCare</title>
+  <meta name="description" content="데이터 기반 초개인화 상담 서비스. 목표 진단 → 맞춤 로드맵 → 실시간 코칭까지, 당신에게 꼭 맞춘 솔루션을 제공합니다." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+
+  <!-- Fonts (perf: preconnect + display swap) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="초개인화 상담 서비스 — HyperCare" />
+  <meta property="og:description" content="목표 설정부터 실행까지, 당신만을 위한 1:1 초개인화 코칭" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="초개인화 상담 서비스 — HyperCare"/>
+  <meta name="twitter:description" content="데이터 기반 1:1 맞춤 상담/코칭"/>
+  <meta name="twitter:image" content="https://example.com/og-image.jpg"/>
+
+  <!-- JSON-LD (Product + AggregateOffer + Reviews) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"초개인화 상담 서비스",
+    "description":"데이터 기반으로 설계되는 1:1 맞춤 상담/코칭",
+    "brand":{"@type":"Brand","name":"HyperCare"},
+    "offers":{"@type":"AggregateOffer","lowPrice":"99000","highPrice":"490000","priceCurrency":"KRW"},
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"300"},
+    "review":{
+      "@type":"Review",
+      "reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},
+      "author":{"@type":"Person","name":"실제 고객"}
+    }
+  }
+  </script>
+  <!-- JSON-LD (FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"정말 ‘초개인화’가 되나요?","acceptedAnswer":{"@type":"Answer","text":"초기 설문, 대화 로그, 실행 데이터(시간/태스크/산출물)를 바탕으로 로드맵이 주기적으로 재구성됩니다."}},
+      {"@type":"Question","name":"분야를 바꿔도 지원되나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 취업·개발·마케팅·창업·외국어 등 다양한 템플릿을 보유하고 있습니다."}},
+      {"@type":"Question","name":"환불/해지 정책은?","acceptedAnswer":{"@type":"Answer","text":"세션 시작 24시간 전까지 무료 취소. 중도 해지 시 미이용 잔여분 전액 환불합니다."}}
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Apple Color Emoji', 'Segoe UI Emoji'] },
+          colors: {
+            primary: { DEFAULT: '#6C7CFF', 50: '#EEF0FF', 100:'#E1E5FF', 600:'#6C7CFF', 700:'#4C59F7'},
+            slate: { 50:'#f8fafc', 900:'#0e1726', 950:'#0b1220' }
+          },
+          boxShadow: { soft: '0 10px 30px rgba(108,124,255,0.20)' },
+          backgroundImage: { grid: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0)" }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.06); }
+    .bg-grid { background-size: 16px 16px; }
+    @media (prefers-reduced-motion: reduce) { .animate-pulse { animation: none !important; } }
+  </style>
+</head>
+<body class="bg-slate-950 text-white selection:bg-primary-600 selection:text-white antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary-600 focus:px-3 focus:py-2">본문 바로가기</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur supports-[backdrop-filter]:backdrop-blur" role="banner">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-semibold" aria-label="HyperCare 홈으로">
+        <span aria-hidden="true" class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-primary-600">HC</span>
+        <span>HyperCare</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="주요">
+        <a href="#features" class="hover:text-primary-100/90">특장점</a>
+        <a href="#how" class="hover:text-primary-100/90">진행 방식</a>
+        <a href="#pricing" class="hover:text-primary-100/90">요금제</a>
+        <a href="#faq" class="hover:text-primary-100/90">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <!-- Theme toggle -->
+        <button id="themeToggle" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/15 hover:bg-white/5" aria-label="테마 전환">
+          <span id="iconDark" class="hidden" aria-hidden="true">🌙</span>
+          <span id="iconLight" class="hidden" aria-hidden="true">☀️</span>
+        </button>
+        <a href="#book" class="hidden sm:inline-flex rounded-md border border-white/15 px-4 py-2 text-sm hover:bg-white/5">데모 보기</a>
+        <a href="#book" class="inline-flex rounded-md bg-primary-600 px-4 py-2 text-sm font-medium shadow-soft hover:bg-primary-700">지금 시작</a>
+        <button id="menuBtn" class="ml-1 inline-flex md:hidden h-9 w-9 items-center justify-center rounded-md border border-white/15 hover:bg-white/5" aria-label="메뉴 열기" aria-controls="mobileNav" aria-expanded="false">≡</button>
+      </div>
+    </div>
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="md:hidden hidden border-t border-white/10 bg-slate-950/90" role="navigation" aria-label="모바일">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 space-y-2">
+        <a href="#features" class="block px-2 py-2 rounded hover:bg-white/5">특장점</a>
+        <a href="#how" class="block px-2 py-2 rounded hover:bg-white/5">진행 방식</a>
+        <a href="#pricing" class="block px-2 py-2 rounded hover:bg-white/5">요금제</a>
+        <a href="#faq" class="block px-2 py-2 rounded hover:bg-white/5">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary-600/20 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-grid opacity-30"></div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1 text-xs text-white/80 mb-5">
+            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span> 실시간 피드백 · 데이터 기반
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold leading-tight">
+            당신만을 위한 <span class="text-primary-600">초개인화 상담</span><br />
+            목표 달성까지 동행합니다
+          </h1>
+          <p class="mt-5 text-white/70 leading-relaxed">
+            설문 · 행동데이터 · 대화 기록을 바탕으로 <b>진단 → 전략 → 실행 → 피드백</b>을 자동 최적화.
+            취업·학습·비즈니스·퍼스널 브랜딩까지, 당신의 상황에 정확히 맞춥니다.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#book" class="inline-flex items-center gap-2 rounded-md bg-primary-600 px-6 py-3 font-medium shadow-soft hover:bg-primary-700">
+              무료 컨설팅 예약
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#cases" class="inline-flex items-center gap-2 rounded-md border border-white/15 px-6 py-3 hover:bg-white/5">
+              성공사례 보기
+            </a>
+          </div>
+          <dl class="mt-6 flex items-center gap-6 text-white/60 text-sm">
+            <div><dt class="sr-only">만족도</dt><dd>만족도 4.9/5.0</dd></div>
+            <div><dt class="sr-only">누적 상담</dt><dd>누적 상담 3,000+ 회</dd></div>
+            <div><dt class="sr-only">재등록율</dt><dd>재등록율 83%</dd></div>
+          </dl>
+        </div>
+
+        <div class="relative">
+          <div class="glass rounded-2xl p-6 border border-white/10">
+            <div class="text-white/80 text-sm mb-3">개인화 대시보드 미리보기</div>
+            <div class="rounded-lg overflow-hidden border border-white/10">
+              <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop" alt="개인화 대시보드 스크린샷" class="w-full h-64 object-cover" fetchpriority="high" decoding="async">
+            </div>
+            <ul class="mt-4 grid sm:grid-cols-3 gap-3 text-sm" role="list">
+              <li class="rounded-lg border border-white/10 p-3">주간 목표 달성률 <b class="text-emerald-400">+27%</b></li>
+              <li class="rounded-lg border border-white/10 p-3">집중 시간 <b class="text-primary-600">11h</b></li>
+              <li class="rounded-lg border border-white/10 p-3">피드백 루프 <b class="text-amber-300">실시간</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold">왜 초개인화가 중요한가요?</h2>
+      <p class="mt-3 text-white/70">사람마다 목표·환경·성향이 다릅니다. HyperCare는 다음을 통해 ‘정확히 나에게 맞는’ 실행 방안을 제시합니다.</p>
+
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 카드들 -->
+        %FEATURE_CARDS%
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold">진행 방식</h2>
+      <div class="mt-10 grid lg:grid-cols-4 gap-6">
+        %HOW_CARDS%
+      </div>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section id="cases" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold">이런 분께 특히 효과적이에요</h2>
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        %USE_CASES%
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof -->
+  <section class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold">고객 후기</h2>
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        %TESTIMONIALS%
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6 flex-wrap">
+        <div>
+          <h2 class="text-3xl font-semibold">요금제</h2>
+          <p class="mt-2 text-white/70">필요한 만큼 선택하세요. 언제든 상향/하향 가능합니다.</p>
+        </div>
+        <div class="flex items-center gap-3 text-sm">
+          <span class="text-white/60">월간</span>
+          <button id="toggleBilling" class="relative inline-flex h-6 w-11 items-center rounded-full bg-white/20 focus:outline-none focus:ring-2 focus:ring-primary-600" aria-pressed="false" aria-label="연간 결제로 전환">
+            <span class="sr-only">연간 결제 토글</span>
+            <span id="toggleDot" class="inline-block h-5 w-5 translate-x-0 rounded-full bg-white transition will-change-transform"></span>
+          </button>
+          <span class="text-white/60">연간 <b class="text-emerald-400">-20%</b></span>
+        </div>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="plans">
+        %PRICING_CARDS%
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking CTA -->
+  <section id="book" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-semibold">무료 20분 진단 상담을 예약하세요</h2>
+      <p class="mt-3 text-white/70">현재 상황과 목표를 듣고, 맞춤 전략의 윤곽을 바로 제시해 드립니다.</p>
+      <div class="mt-8 grid gap-3 sm:grid-cols-2">
+        <a href="https://calendly.com/" class="rounded-md bg-primary-600 px-6 py-3 font-medium hover:bg-primary-700 shadow-soft">캘린더로 예약</a>
+        <a href="mailto:hello@example.com" class="rounded-md border border-white/15 px-6 py-3 hover:bg-white/5">이메일 문의</a>
+      </div>
+      <form class="mt-6 grid gap-3 sm:grid-cols-3 text-left" aria-label="빠른 연락처 수집">
+        <input type="email" required placeholder="이메일" class="col-span-2 rounded-md border border-white/15 bg-transparent px-4 py-3 placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary-600" aria-label="이메일"/>
+        <button type="submit" class="rounded-md bg-white/10 px-4 py-3 hover:bg-white/20">연락 받기</button>
+      </form>
+      <p class="mt-4 text-xs text-white/50">* 예약 시 개인정보는 일정 안내에만 사용되며, 마케팅 목적으로 저장하지 않습니다.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold">자주 묻는 질문</h2>
+      <div class="mt-8 space-y-3" id="faqList">
+        %FAQ_ITEMS%
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-2 font-semibold mb-3">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-primary-600" aria-hidden="true">HC</span>
+          <span>HyperCare</span>
+        </div>
+        <p class="text-white/60 text-sm">© <span id="year"></span> HyperCare. All rights reserved.</p>
+      </div>
+      <nav class="text-sm" aria-label="바로가기">
+        <div class="font-semibold mb-2">바로가기</div>
+        <ul class="space-y-1 text-white/70">
+          <li><a href="#features" class="hover:text-white">특장점</a></li>
+          <li><a href="#pricing" class="hover:text-white">요금제</a></li>
+          <li><a href="#book" class="hover:text-white">예약</a></li>
+        </ul>
+      </nav>
+      <div class="text-sm">
+        <div class="font-semibold mb-2">정책</div>
+        <ul class="space-y-1 text-white/70">
+          <li><a href="#" class="hover:text-white">개인정보 처리방침</a></li>
+          <li><a href="#" class="hover:text-white">이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  </main>
+
+  <!-- Templates injected once to keep HTML tidy -->
+  <template id="featureCardTpl">
+    <div class="rounded-xl border border-white/10 p-6 hover:bg-white/5 transition">
+      <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md bg-primary-600">%NUM%</div>
+      <h3 class="font-semibold mb-2">%TITLE%</h3>
+      <p class="text-white/70 text-sm">%DESC%</p>
+    </div>
+  </template>
+  <template id="howCardTpl">
+    <div class="rounded-xl border border-white/10 p-6">
+      <h3 class="font-semibold mb-2">%TITLE%</h3>
+      <p class="text-white/70 text-sm">%DESC%</p>
+    </div>
+  </template>
+  <template id="useCaseTpl">
+    <div class="rounded-xl border border-white/10 p-6">
+      <h3 class="font-semibold mb-1">%TITLE%</h3>
+      <p class="text-white/70 text-sm">%DESC%</p>
+    </div>
+  </template>
+  <template id="testimonialTpl">
+    <blockquote class="rounded-xl border border-white/10 p-6">
+      <p class="text-white/90">“%QUOTE%”</p>
+      <footer class="mt-4 text-white/50 text-sm">%AUTHOR%</footer>
+    </blockquote>
+  </template>
+  <template id="pricingCardTpl">
+    <div class="rounded-2xl border border-white/10 p-6 %FEATURED_BG% %FEATURED_BORDER% relative">
+      %BADGE%
+      <h3 class="font-semibold">%PLAN%</h3>
+      <p class="mt-1 text-white/60 text-sm">%TAG%</p>
+      <div class="mt-4 text-3xl font-bold"><span class="price" data-month="%PMONTH%" data-year="%PYEAR%">%PMONTH%</span><span class="text-base font-normal text-white/60">원</span></div>
+      <ul class="mt-4 space-y-2 text-sm text-white/80">
+        %FEATURES%
+      </ul>
+      <a href="#book" class="mt-6 inline-flex w-full justify-center rounded-md %CTA_BG% px-4 py-2 %CTA_HOVER%">%CTA%</a>
+    </div>
+  </template>
+  <template id="faqItemTpl">
+    <details class="group rounded-lg border border-white/10 p-4">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="font-medium">%Q%</span>
+        <span class="text-white/40 group-open:rotate-180 transition" aria-hidden="true">⌄</span>
+      </summary>
+      <p class="mt-3 text-white/70 text-sm">%A%</p>
+    </details>
+  </template>
+
+  <!-- Scripts -->
+  <script>
+    // Theme (persist + toggle)
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const iconDark = document.getElementById('iconDark');
+    const iconLight = document.getElementById('iconLight');
+    const userPref = localStorage.getItem('theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = (userPref ? userPref === 'dark' : systemDark);
+    if (isDark) root.classList.add('dark');
+
+    function updateThemeIcon(){
+      const dark = root.classList.contains('dark');
+      iconDark.classList.toggle('hidden', !dark);
+      iconLight.classList.toggle('hidden', dark);
+      themeToggle.setAttribute('aria-label', dark ? '라이트 모드로 전환' : '다크 모드로 전환');
+    }
+    updateThemeIcon();
+
+    themeToggle?.addEventListener('click', ()=>{
+      root.classList.toggle('dark');
+      const dark = root.classList.contains('dark');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+      updateThemeIcon();
+    });
+
+    // Mobile nav
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn?.addEventListener('click', ()=>{
+      const open = mobileNav.classList.toggle('hidden');
+      const expanded = !open;
+      menuBtn.setAttribute('aria-expanded', expanded);
+    });
+
+    // Render dynamic sections via templates (keeps HTML compact & editable)
+    function fill(selector, html){ document.querySelector(selector).innerHTML = html; }
+    function li(txt){ return `<li>${txt}</li>`; }
+
+    // Features
+    const featureData = [
+      ['①','정밀 진단','심층 설문 + 대화 분석으로 현재 실력/장애요인을 가시화. 단기/중장기 목표를 재정의합니다.'],
+      ['②','맞춤 로드맵','학습-실무-네트워킹까지 개인별 단계/난이도/리소스에 맞춘 주간 계획을 자동 설계합니다.'],
+      ['③','실시간 피드백','성과·습관 데이터로 계획을 재조정. 장애물 발생 즉시 대안을 제시하고 실행을 돕습니다.'],
+      ['④','분야 특화','취업·이직, 프론트엔드 포트폴리오, 창업/마케팅, 외국어 학습 등 목적별 프레임 제공.'],
+      ['⑤','도구 연동','Notion, Google Calendar, GitHub, Toggl 등과 연동해 자동 트래킹 & 리마인드.'],
+      ['⑥','보안/프라이버시','최소 수집·암호화·삭제 요청 보장. 데이터는 오직 개인화 목적에만 사용합니다.']
+    ];
+    const fTpl = document.getElementById('featureCardTpl').innerHTML;
+    fill('#features .grid', featureData.map(([n,t,d])=>fTpl.replace('%NUM%',n).replace('%TITLE%',t).replace('%DESC%',d)).join(''));
+
+    // How
+    const howData = [
+      ['1) 온보딩','목표/현재 상태 설문, 기존 자료 업로드, 일정 연결'],
+      ['2) 전략수립','개인화 전략/로드맵 생성 · 검토 미팅'],
+      ['3) 실행 & 피드백','주간 체크인, 리포트, 장애물 처리'],
+      ['4) 확장','성과 분석, 차기 목표 재설정 및 고도화']
+    ];
+    const hTpl = document.getElementById('howCardTpl').innerHTML;
+    fill('#how .grid', howData.map(([t,d])=>hTpl.replace('%TITLE%',t).replace('%DESC%',d)).join(''));
+
+    // Use cases
+    const useCases = [
+      ['취업/이직 준비','로드맵, 프로젝트 기획, 포트폴리오/면접 코칭'],
+      ['프론트엔드 성장','React·TypeScript·테스트·배포 파이프라인 개인화 학습'],
+      ['창업/브랜딩','아이디어 검증, 랜딩/콘텐츠 전략, 실행 그로스'],
+      ['학습/자격 준비','개인화 커리큘럼, 데일리 루틴 설계, 복습 자동화'],
+      ['외국어 실전','목표 상황별 스피킹 스크립트와 실전 코칭'],
+      ['시간/습관 관리','집중 블록/디지털 디톡스/루틴 자동 리마인드']
+    ];
+    const uTpl = document.getElementById('useCaseTpl').innerHTML;
+    fill('#cases .grid', useCases.map(([t,d])=>uTpl.replace('%TITLE%',t).replace('%DESC%',d)).join(''));
+
+    // Testimonials
+    const reviews = [
+      ['일주일 단위로 막히는 지점이 사라졌어요. 실행률이 눈에 띄게 올랐습니다.','주니어 프론트엔드 / 전환 성공'],
+      ['포트폴리오와 면접 답변까지 제 페이스에 맞춰 다듬어 주셨어요.','이직 준비 / 합격'],
+      ['콘텐츠/세일즈 루틴이 정리되니 매출이 안정화됐습니다.','온라인 셀러 / 매출 ↑']
+    ];
+    const tTpl = document.getElementById('testimonialTpl').innerHTML;
+    fill('section:nth-of-type(5) .grid', reviews.map(([q,a])=>tTpl.replace('%QUOTE%',q).replace('%AUTHOR%',a)).join(''));
+
+    // Pricing
+    const pTpl = document.getElementById('pricingCardTpl').innerHTML;
+    const planCards = [
+      {plan:'Starter', tag:'가벼운 시작', month:'99,000', year:'79,000', features:['월 2회 1:1 세션 (각 45분)','개인화 로드맵 · 주간 체크리스트','이메일 피드백'], cta:'시작하기', featured:false},
+      {plan:'Pro', tag:'집중 성장', month:'199,000', year:'159,000', features:['주 1회 1:1 세션 (각 50분)','실시간 DM 피드백 · 자료 교정','Notion/Calendar 연동'], cta:'시작하기', featured:true},
+      {plan:'Elite', tag:'성과 집착형', month:'490,000', year:'392,000', features:['주 2회 1:1 세션 (각 60분)','데일리 체크인 · 주간 리포트','프로젝트 동행(리뷰/실행 코칭)'], cta:'상담 예약', featured:false}
+    ];
+    function cardHTML(p){
+      return pTpl
+        .replace('%FEATURED_BG%', p.featured ? 'bg-white/5' : '')
+        .replace('%FEATURED_BORDER%', p.featured ? 'border-primary-600' : '')
+        .replace('%BADGE%', p.featured ? '<span class="absolute -top-3 right-4 rounded-md bg-primary-600 px-2 py-1 text-xs">가장 인기</span>' : '')
+        .replace('%PLAN%', p.plan)
+        .replace('%TAG%', p.tag)
+        .replace('%PMONTH%', p.month)
+        .replace('%PYEAR%', p.year)
+        .replace('%FEATURES%', p.features.map(li).join(''))
+        .replace('%CTA%', p.cta)
+        .replace('%CTA_BG%', p.featured ? 'bg-primary-600' : 'bg-white/10')
+        .replace('%CTA_HOVER%', p.featured ? 'hover:bg-primary-700 shadow-soft' : 'hover:bg-white/20');
+    }
+    fill('#plans', planCards.map(cardHTML).join(''));
+
+    // FAQ
+    const faqTpl = document.getElementById('faqItemTpl').innerHTML;
+    const faq = [
+      ['정말 ‘초개인화’가 되나요?','초기 설문, 대화 로그, 실행 데이터(시간/태스크/산출물)를 바탕으로 로드맵이 주기적으로 재구성됩니다.'],
+      ['분야를 바꿔도 지원되나요?','가능합니다. 취업·개발·마케팅·창업·외국어 등 다양한 템플릿을 보유하고 있습니다.'],
+      ['환불/해지 정책은?','세션 시작 24시간 전까지 무료 취소. 중도 해지 시 미이용 잔여분 전액 환불합니다.']
+    ];
+    fill('#faqList', faq.map(([q,a])=>faqTpl.replace('%Q%', q).replace('%A%', a)).join(''));
+
+    // Pricing toggle (yearly vs monthly)
+    const toggle = document.getElementById('toggleBilling');
+    const dot = document.getElementById('toggleDot');
+    const prices = () => document.querySelectorAll('.price');
+    let yearly = false;
+    function renderPrices(){
+      prices().forEach(p=>{ const month=p.getAttribute('data-month'); const year=p.getAttribute('data-year'); p.textContent = yearly ? year : month; });
+      toggle.setAttribute('aria-pressed', String(yearly));
+      toggle.setAttribute('aria-label', yearly ? '월간 결제로 전환' : '연간 결제로 전환');
+    }
+    toggle?.addEventListener('click', ()=>{
+      yearly = !yearly;
+      dot.style.transform = yearly ? 'translateX(20px)' : 'translateX(0)';
+      renderPrices();
+    });
+    renderPrices();
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- (Optional) Lightweight analytics placeholder -->
+  <!-- <script defer data-domain="example.com" src="https://plausible.io/js/script.js"></script> -->
+</body>
+</html>
